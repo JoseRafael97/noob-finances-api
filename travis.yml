@@ -1,6 +1,9 @@
+sudo: required
 language: node_js
 node_js:
-  - "iojs"
   - "lts/*"
-before_script:
-  - npm install
+install:
+    - npm install
+script:
+    - npm start
+
