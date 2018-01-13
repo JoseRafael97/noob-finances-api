@@ -7,4 +7,4 @@ Api RESTful build in NodeJS with Express.
     npm install
     
 ## How to use
-    npm start
+    npm run start
