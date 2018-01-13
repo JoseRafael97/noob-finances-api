@@ -9,7 +9,8 @@ var mongoose    = require('mongoose');
 
 var jwt    = require('jsonwebtoken'); 
 var config = require('./config'); 
-var Task = require('./api/models/expensiveModel');
+var Expensive = require('./api/models/expensiveModel');
+var Account = require('./api/models/AccountModel');
 
 // =======================
 // configuration =========
