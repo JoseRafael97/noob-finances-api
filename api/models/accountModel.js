@@ -2,7 +2,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
 var AccountSchema = new Schema({
   username: {
     type: String,
@@ -12,8 +11,15 @@ var AccountSchema = new Schema({
     type: String,
     required: 'Entry with account password'
   },
+  permission:{
+    type: [{
+      type: String,
+      enum: ['free', 'premium']
+    }],
+    default: ['free']
+  },
   expensives: [{ type: Schema.Types.ObjectId, ref: 'Expensive' }]
 
 });
 
-module.exports = mongoose.model('Account', ExpensiveSchema);
+module.exports = mongoose.model('Account', AccountSchema);

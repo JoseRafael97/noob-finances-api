@@ -10,7 +10,8 @@ var mongoose    = require('mongoose');
 var jwt    = require('jsonwebtoken'); 
 var config = require('./config'); 
 var Expensive = require('./api/models/expensiveModel');
-var Account = require('./api/models/AccountModel');
+var Account = require('./api/models/accountModel');
+var Category = require('./api/models/categoryModel');
 
 // =======================
 // configuration =========
@@ -26,10 +27,9 @@ app.use(morgan('dev'));
 // routes ================
 // =======================
 // API ROUTES -------------------
-var apiRoutes = express.Router(); 
-
-var routes = require('./api/routes/expensiveRoutes');
-routes(app);
+require('./api/routes/expensiveRoutes')(app);
+require('./api/routes/accountRoutes')(app);
+require('./api/routes/authRouter')(app);
 
 // =======================
 // route not found config ======

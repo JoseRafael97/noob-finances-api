@@ -2,7 +2,7 @@
 
 
 var mongoose = require('mongoose'),
-  Expensive = mongoose.model('Expensives');
+  Expensive = mongoose.model('Expensive');
 
 exports.list_all_expensives = function(req, res) {
   Expensive.find({}, function(err, expensive) {
